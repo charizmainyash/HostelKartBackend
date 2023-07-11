@@ -5,10 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-   
+    "start": "node server.js"
   },
-  "keywords": [],
+  "keywords": ["Ecomm","App"],
   "author": "Ritisha Singh",
   "license": "ISC",
   "dependencies": {

@@ -21,6 +21,11 @@ app.use(morgan("dev"));
 //body parser
 app.use(express.json());
 
+app.get("/",(req,res) =>{
+  res.setHeader("Access-Control-Allow-Credentials","true");
+  res.send("API is running");
+});
+
 const PORT = process.env.PORT || 5000;
 
 //mounting routes

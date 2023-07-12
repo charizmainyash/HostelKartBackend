@@ -19,16 +19,15 @@ dotenv.config();
 app.use(cors());
 app.use(morgan("dev"));
 
-//body parser
-app.use(express.json());
 
-app.use(express.urlencoded({ extended: true, limit: ‘50mb’ }));
+
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 app.use(express.json({
 verify: (req, res, buf) => {
 req.rawBody = buf.toString()
 },
-limit: ‘50mb’
+limit: '50mb'
 }));
 
 app.get("/",(req,res) =>{

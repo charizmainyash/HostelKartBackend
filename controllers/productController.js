@@ -365,7 +365,7 @@ export const brainTreePaymentController = async (req, res) => {
           const order = new orderModel({
             products: cart,
             payment: result,
-            buyer: req.user._id,
+            buyer: req.user.id,
           }).save();
           res.json({ ok: true });
         } else {

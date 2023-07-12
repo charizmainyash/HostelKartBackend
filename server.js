@@ -41,7 +41,7 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 app.listen(PORT, () => {
-  console.log(`SERVER RUNNING ON ${PORT}`.bgCyan.white);
+  console.log(`SERVER RUNNING ON PORT`.bgCyan.white);
 });
 
 dbConnect();

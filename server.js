@@ -7,7 +7,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import dbConnect from "./config/database.js";
-import bodyParser from "body-parser";
+
 
 //instantiating express server
 const app = express();
@@ -22,11 +22,14 @@ app.use(morgan("dev"));
 //body parser
 app.use(express.json());
 
-app.use(bodyParser.urlencoded({
-  limit: "50mb",
-  extended: false
+app.use(express.urlencoded({ extended: true, limit: ‘50mb’ }));
+
+app.use(express.json({
+verify: (req, res, buf) => {
+req.rawBody = buf.toString()
+},
+limit: ‘50mb’
 }));
-app.use(bodyParser.json({limit: "50mb"}));
 
 app.get("/",(req,res) =>{
   res.setHeader("Access-Control-Allow-Credentials","true");
